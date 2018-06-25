@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = (Button) findViewById(R.id.BUTTON);
+
+        HardControl.ledOpen();
+
         checkBoxLed1 = (CheckBox) findViewById(R.id.LED1);
         checkBoxLed2 = (CheckBox) findViewById(R.id.LED2);
         checkBoxLed3 = (CheckBox) findViewById(R.id.LED3);
@@ -33,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-                HardControl hardControl = new HardControl();
 
                 ledon = !ledon;
                 if(ledon) {
@@ -42,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
                     checkBoxLed2.setChecked(true);
                     checkBoxLed3.setChecked(true);
                     checkBoxLed4.setChecked(true);
+
+                    for(int i = 0;i < 4;i++)
+                        HardControl.ledCtrl(i,1);
+
+
                 }
                 else {
                     button.setText("ALL OFF");
@@ -49,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                     checkBoxLed2.setChecked(false);
                     checkBoxLed3.setChecked(false);
                     checkBoxLed4.setChecked(false);
+
+                    for(int i = 0;i < 4;i++)
+                        HardControl.ledCtrl(i,0);
                 }
             }
         });
@@ -64,10 +74,12 @@ public class MainActivity extends AppCompatActivity {
                 if (checked) {
                     // Put some meat on the sandwich
                     Toast.makeText(getApplicationContext(), "LED1 ON",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(0,1);
                 }
                 else {
                     // Remove the meat
                     Toast.makeText(getApplicationContext(), "LED1 OFF",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(0,0);
                 }
                 break;
 
@@ -75,10 +87,12 @@ public class MainActivity extends AppCompatActivity {
                 if (checked) {
                     // Put some meat on the sandwich
                     Toast.makeText(getApplicationContext(), "LED2 ON",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(1,1);
                 }
                 else {
                     // Remove the meat
                     Toast.makeText(getApplicationContext(), "LED2 OFF",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(1,0);
                 }
                 break;
 
@@ -86,10 +100,12 @@ public class MainActivity extends AppCompatActivity {
                 if (checked) {
                     // Put some meat on the sandwich
                     Toast.makeText(getApplicationContext(), "LED3 ON",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(2,1);
                 }
                 else {
                     // Remove the meat
                     Toast.makeText(getApplicationContext(), "LED3 OFF",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(2,0);
                 }
                 break;
 
@@ -97,10 +113,12 @@ public class MainActivity extends AppCompatActivity {
                 if (checked) {
                     // Put some meat on the sandwich
                     Toast.makeText(getApplicationContext(), "LED4 ON",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(3,1);
                 }
                 else {
                     // Remove the meat
                     Toast.makeText(getApplicationContext(), "LED4 OFF",Toast.LENGTH_SHORT).show();
+                    HardControl.ledCtrl(3,0);
                 }
                 break;
 
