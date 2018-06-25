@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
+import com.example.gauss.hardlibrary.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+                HardControl hardControl = new HardControl();
+
                 ledon = !ledon;
                 if(ledon) {
                     button.setText("ALL ON");
