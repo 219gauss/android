@@ -3,3 +3,4 @@
 2，将test_led_Dev目录放在Android源码里的frameworks/testing目录下
 3，设置编译环境，执行    . setenv
 4，执行 mmm frameworks/testing/test_led_Dev/ 编译成功
+5,最终生成out/target/product/tiny4412/obj/EXECUTABLES/testdev_intermediates/testdev可执行文件
