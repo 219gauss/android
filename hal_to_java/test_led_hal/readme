@@ -4,3 +4,5 @@
 3，设置编译环境，执行 . setenv
 4，编译，执行 mmm hardware/libhardware/modules/led/
 5，编译成功，生产out/target/product/tiny4412/obj/lib/led.default.so文件
+6，使用make snod，重新生成system.img
+7，./gen-img.sh
