@@ -1,0 +1,6 @@
+编译过程：
+1，将led目录拷贝到hardware/libhardware/modules下
+2，将led.h头文件拷贝到hardware/libhardware/include/hardware下
+3，设置编译环境，执行 . setenv
+4，编译，执行 mmm hardware/libhardware/modules/led/
+5，编译成功，生产out/target/product/tiny4412/obj/lib/led.default.so文件
