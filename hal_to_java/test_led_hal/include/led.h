@@ -2,15 +2,16 @@
 #ifndef _LED_H
 #define _LED_H
 
+#include <hardware/hardware.h>
 
 
 #define LED_HARDWARE_MODULE_ID "led"
 
 
 
-typedef struct led_module_t {
+struct led_module_t {
     struct hw_module_t common;
-} led_module_t;
+} ;
 
 struct led_device_t {
     struct hw_device_t common;
